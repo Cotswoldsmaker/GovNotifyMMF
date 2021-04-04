@@ -6,15 +6,18 @@ You need to sign up to GOV.uk first and then get an API-key and template ID. You
 Arguments:
 
 SMS:
+
 mobile number in format 07123456789
 message
 
 Email:
+
 email address
 subject
 message
 
 letter:
+
 address, using semi-colon ";" to denote new lines
 from
 heading
