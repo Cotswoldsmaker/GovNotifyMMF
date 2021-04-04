@@ -306,7 +306,7 @@ sendMessageGUKN(method, variables, MMF := False)
 	pythonMessages := new MemoryMappedFile_IPC("AHK_2_Python_IPC", False)
 	pythonMessages.send("GOV_UK_notify", variables)
 
-	Run, % pythonEXEPath ;,, Hide
+	Run, % pythonEXEPath,, Hide
 	
 	Loop 600		; 600 x 100 = 1 min
 	{
