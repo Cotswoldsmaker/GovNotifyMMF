@@ -6,19 +6,25 @@ You need to sign up to GOV.uk first and then get an API-key and template ID. You
 SMS:
 
 mobile number in format 07123456789
+
 message
 
 Email:
 
 email address
+
 subject
+
 message
 
 letter:
 
 address, using semi-colon ";" to denote new lines
+
 from
+
 heading
+
 body
 
 To make into an executable, make sure you have pyInstaller installed. Then go into the folder with your code and run:
