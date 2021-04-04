@@ -3,8 +3,6 @@ Python script to send REST API messages to GOV.uk Notify to send SMS message, em
 
 You need to sign up to GOV.uk first and then get an API-key and template ID. You need to create templates with the below 'personalisations'.
 
-Arguments:
-
 SMS:
 
 mobile number in format 07123456789
