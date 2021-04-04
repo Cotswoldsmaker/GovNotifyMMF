@@ -19,8 +19,8 @@ sleepTime = 1
 
 
 
-def GOV_UK_notify(arguements):
-    argSplit = arguements.split(SEPARATOR_SUB)
+def GOV_UK_notify(arguments):
+    argSplit = arguments.split(SEPARATOR_SUB)
     method = argSplit[0]
     api_key = argSplit[1]
     template_ID = argSplit[2]
@@ -79,11 +79,11 @@ def GOV_UK_notify(arguements):
 
 
 
-def sleepTimeF(arguement):
+def sleepTimeF(argument):
     global sleepTime
     
-    sleepTime = int(arguement)
-    #print('Sleep timer set to: %s' %(arguement))
+    sleepTime = int(argument)
+    #print('Sleep timer set to: %s' %(argument))
     return ' '
 
 
@@ -105,16 +105,16 @@ class MemoryMappedFile_IPC:
         else:
             return -1
                 
-    def write(self, func, arguement = ""):
+    def write(self, func, argument = ""):
         global SEPARATOR
         
         func = func.replace("<", "")
         func = func.replace(">", "")
         func = func.replace("|", "")
 
-        argument = arguement.replace("<", "less than")
-        argument = arguement.replace(">", "more than")
-        argument = arguement.replace("|", "pipe")
+        argument = argument.replace("<", "less than")
+        argument = argument.replace(">", "more than")
+        argument = argument.replace("|", "pipe")
         
         if argument == "":
             buffer = "<" + func + ">"
@@ -154,19 +154,19 @@ def mainThread():
         
             elif functionCall != "SPRead" and functionCall != "wait":
                 HandleError = False # Helps to show up errors with the dispacher function calls
-                arguement = MMFSplit[1]
+                argument = MMFSplit[1]
                 dispatcher = {'GOV_UK_notify' : GOV_UK_notify, 'sleepTimeF' : sleepTimeF}
                 
                 if functionCall in dispatcher:
                     if HandleError == True:
                         try:
-                            returnResult = dispatcher[functionCall](arguement)
+                            returnResult = dispatcher[functionCall](argument)
                         except:
                             AHK_Messages.write("SPRead", 'error')
                         else:
                             AHK_Messages.write("SPRead", returnResult)
                     else:
-                        returnResult = dispatcher[functionCall](arguement)
+                        returnResult = dispatcher[functionCall](argument)
                         AHK_Messages.write("SPRead", returnResult)
                 else:
                     errorMessage = 'Function name \'%s\' was not found in python script' %(functionCall)
