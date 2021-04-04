@@ -112,14 +112,14 @@ class MemoryMappedFile_IPC:
         func = func.replace(">", "")
         func = func.replace("|", "")
 
-        argument = arguement.replace("<", "less than")
-        argument = arguement.replace(">", "more than")
-        argument = arguement.replace("|", "pipe")
+        arguement = arguement.replace("<", "less than")
+        arguement = arguement.replace(">", "more than")
+        arguement = arguement.replace("|", "pipe")
         
-        if argument == "":
+        if arguement == "":
             buffer = "<" + func + ">"
         else:
-            buffer = "<" + func + SEPARATOR + argument + ">"
+            buffer = "<" + func + SEPARATOR + arguement + ">"
         
         self.MMFInstance.seek(0) #Move back to beginning of file
         self.MMFInstance.write(bytes(buffer, 'UTF-8'))
