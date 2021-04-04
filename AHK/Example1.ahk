@@ -20,16 +20,10 @@ GUKN_letter_body := ""
 CurrentDirectory := A_ScriptDir . "\"
 pythonEXEPath := CurrentDirectory . "Library\GovNotifyMMF.exe"
 
-
-; Progress Bar
-PBTitle := "Progress"
-PBMainString := ""
-PBCounter := 0
-PBPercentage := 0
-PBText := ""
-
 dialogueColour := "00FFFF"
 Developing := True
+
+
 
 
 ; *********
