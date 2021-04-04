@@ -1,5 +1,5 @@
 __pycache__/
-AHK/Library/Private variables.ahk
+#AHK/Library/Private variables.ahk
 build/
 dist/
 GovNotifyMMF.spec
